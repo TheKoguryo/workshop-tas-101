@@ -1,0 +1,11 @@
+---
+applications:
+- name: spring-boot-hello
+  random-route: true
+  instances: 2
+  path: ./build/libs/spring-boot-hello-1.0-SNAPSHOT.jar
+  buildpacks: 
+  - java_buildpack
+  stack: cflinuxfs3
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
